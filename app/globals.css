@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --brand-red: #C8372D;
+  --brand-blue: #2B4C8C;
+  --bg: #F8F6F5;
+  --text: #111110;
+  --muted: #7A7A74;
+  --border: #E2E2DC;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* normcph-style typography scale */
+.display {
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.heading-lg {
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.label {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@keyframes zoom-in {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+.hero-zoom {
+  animation: zoom-in 10.6s ease-in-out forwards;
+}
+
+::selection {
+  background: var(--brand-red);
+  color: white;
+}
