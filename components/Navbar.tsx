@@ -30,13 +30,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        transparent
-          ? "bg-transparent border-b border-white/10"
-          : "bg-[#F8F7F5]/95 backdrop-blur-sm border-b border-[#E2E2DC]"
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-[#F8F7F5]/95 backdrop-blur-sm border-b border-[#E2E2DC] ${
+        transparent ? "md:bg-transparent md:backdrop-blur-none md:border-white/10" : ""
       }`}
     >
-      <div className="relative h-28 flex items-center px-6 md:px-10">
+      <div className="relative h-20 md:h-28 flex items-center px-6 md:px-10">
 
         {/* Logo */}
         <Link href="/" className="absolute left-6 md:left-10 flex items-center group">
@@ -45,7 +43,7 @@ export default function Navbar() {
             alt="Dropraise"
             width={120}
             height={40}
-            className="h-[77px] w-auto object-contain"
+            className="h-[48px] md:h-[76px] w-auto object-contain"
             priority
           />
         </Link>
@@ -69,7 +67,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className={`md:hidden absolute right-6 label transition-colors duration-300 ${transparent ? "text-white/70" : "text-[#7A7A74]"}`}
+          className="md:hidden absolute right-6 label text-[#7A7A74]"
           onClick={() => setOpen(!open)}
         >
           {open ? "Close" : "Menu"}
