@@ -29,7 +29,7 @@ export default function HeroCarousel() {
 
   return (
     <div className="mt-20 md:mt-0">
-      <section className="relative w-full aspect-[4/3] md:aspect-video overflow-hidden bg-[#111110]">
+      <section className="relative w-full h-[calc(100dvh-80px)] md:h-auto md:aspect-video overflow-hidden bg-[#111110]">
 
         {/* Slides */}
         {slides.map((slide, i) => (
@@ -45,7 +45,7 @@ export default function HeroCarousel() {
               src={slide.src}
               alt={slide.alt}
               fill
-              className={`object-contain ${i === current ? "md:hero-zoom" : ""}`}
+              className={`object-cover ${i === current ? "hero-zoom" : ""}`}
               priority={i === 0}
             />
           </Link>
@@ -57,11 +57,10 @@ export default function HeroCarousel() {
         {/* Bottom content — 桌面版顯示，手機版隱藏 */}
         <div className="absolute inset-x-0 bottom-0 z-10 hidden md:flex flex-col items-center pb-14 gap-4 text-center px-6 pointer-events-none">
           <h1 className="text-[16px] font-light tracking-[0.05em] text-white">
-            室內設計是把未來生活具現化的過程
+            讓未來的生活，在此具現。
           </h1>
-          <p className="text-[12px] text-white/70 leading-relaxed max-w-md tracking-wide">
-            每一個空間都承載著未來的生活方式。從格局規劃到材質選配，我們把你說不清楚的理想生活，
-            轉化成看得見、摸得著的真實空間。設計不是裝飾，是讓你的每一天過得更好的決定。
+          <p className="text-[16px] text-white/70 leading-relaxed max-w-md tracking-wide">
+            ── 室內設計不只是裝修，更是探索生活可能性的過程。
           </p>
 
           {/* Slide dots */}
@@ -95,11 +94,10 @@ export default function HeroCarousel() {
       {/* 手機版文字區（輪播圖下方，桌面版隱藏） */}
       <div className="md:hidden flex flex-col items-center gap-4 text-center px-6 py-8 bg-[#F8F7F5] border-b border-[#E2E2DC]">
         <h1 className="text-[16px] font-light tracking-[0.05em] text-[#111110]">
-          室內設計是把未來生活具現化的過程
+          讓未來的生活，在此具現。
         </h1>
-        <p className="text-[12px] text-[#111110]/60 leading-relaxed max-w-md tracking-wide">
-          每一個空間都承載著未來的生活方式。從格局規劃到材質選配，我們把你說不清楚的理想生活，
-          轉化成看得見、摸得著的真實空間。設計不是裝飾，是讓你的每一天過得更好的決定。
+        <p className="text-[16px] text-[#111110]/60 leading-relaxed max-w-md tracking-wide">
+          ── 室內設計不只是裝修，更是探索生活可能性的過程。
         </p>
         <div className="flex gap-2">
           {slides.map((_, i) => (
