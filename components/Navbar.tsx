@@ -30,52 +30,54 @@ export default function Navbar() {
   const transparent = isHome && !scrolled;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-[#F8F7F5]/95 backdrop-blur-sm border-b border-[#E2E2DC] ${
-        transparent ? "md:bg-transparent md:backdrop-blur-none md:border-white/10" : ""
-      }`}
-    >
-      <div className="relative h-20 md:h-28 flex items-center px-6 md:px-10">
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-[#F8F7F5]/95 backdrop-blur-sm border-b border-[#E2E2DC] ${
+          transparent ? "md:bg-transparent md:backdrop-blur-none md:border-white/10" : ""
+        }`}
+      >
+        <div className="relative h-20 md:h-28 flex items-center px-6 md:px-10">
 
-        {/* Logo */}
-        <Link href="/" className="absolute left-6 md:left-10 flex items-center group">
-          <Image
-            src="/logo.png"
-            alt="Dropraise"
-            width={120}
-            height={40}
-            className="h-[48px] md:h-[76px] w-auto object-contain"
-            priority
-          />
-        </Link>
+          {/* Logo */}
+          <Link href="/" className="absolute left-6 md:left-10 flex items-center group">
+            <Image
+              src="/logo.png"
+              alt="Dropraise"
+              width={120}
+              height={40}
+              className="h-[48px] md:h-[76px] w-auto object-contain"
+              priority
+            />
+          </Link>
 
-        {/* Desktop Nav — 置中 */}
-        <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-          {links.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className={`text-[12px] tracking-[0.1em] uppercase font-normal transition-colors duration-300 ${
-                transparent
-                  ? pathname === href ? "text-white" : "text-white/60 hover:text-white"
-                  : pathname === href ? "text-[#0000ff]" : "text-[#0000ff]/60 hover:text-[#0000ff]"
-              }`}
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
+          {/* Desktop Nav — 置中 */}
+          <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+            {links.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`text-[12px] tracking-[0.1em] uppercase font-normal transition-colors duration-300 ${
+                  transparent
+                    ? pathname === href ? "text-white" : "text-white/60 hover:text-white"
+                    : pathname === href ? "text-[#0000ff]" : "text-[#0000ff]/60 hover:text-[#0000ff]"
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden absolute right-6 label text-[#7A7A74]"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? "Close" : "Menu"}
-        </button>
-      </div>
+          {/* Mobile toggle */}
+          <button
+            className="md:hidden absolute right-6 label text-[#7A7A74]"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? "Close" : "Menu"}
+          </button>
+        </div>
+      </header>
 
-      {/* Mobile Menu — 全螢幕 overlay，圖片背景 */}
+      {/* Mobile Menu — 移到 header 外避免 backdrop-blur 干擾 fixed 定位 */}
       {open && (
         <div
           className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center"
@@ -96,6 +98,6 @@ export default function Navbar() {
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }
