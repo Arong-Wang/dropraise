@@ -5,9 +5,10 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const links = [
+  { href: "/about", label: "About" },
   { href: "/interior", label: "Interior" },
   { href: "/mbr", label: "Made by Romance" },
-  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -74,19 +75,25 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — 全螢幕 overlay，圖片背景 */}
       {open && (
-        <div className="md:hidden bg-[#F8F7F5] border-b border-[#E2E2DC] px-6 py-6 flex flex-col gap-5 items-center">
-          {links.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setOpen(false)}
-              className={`label transition-colors ${pathname === href ? "text-[#111110]" : "text-[#7A7A74]"}`}
-            >
-              {label}
-            </Link>
-          ))}
+        <div
+          className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center"
+          style={{ backgroundImage: "url('/works/huang-residence/1.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+        >
+          <div className="absolute inset-0 bg-black/60" />
+          <nav className="relative z-10 flex flex-col gap-8 items-center">
+            {links.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setOpen(false)}
+                className={`text-[15px] tracking-[0.15em] uppercase font-light transition-colors duration-300 ${pathname === href ? "text-white" : "text-white/50 hover:text-white"}`}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
         </div>
       )}
     </header>
