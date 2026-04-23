@@ -32,8 +32,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-[#F8F7F5]/95 backdrop-blur-sm border-b border-[#E2E2DC] ${
-          transparent ? "md:bg-transparent md:backdrop-blur-none md:border-white/10" : ""
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+          transparent
+            ? "bg-transparent backdrop-blur-none border-white/10"
+            : "bg-[#F8F7F5]/95 backdrop-blur-sm border-b border-[#E2E2DC]"
         }`}
       >
         <div className="relative h-20 md:h-28 flex items-center px-6 md:px-10">
@@ -69,7 +71,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden absolute right-6 label text-[#7A7A74]"
+            className={`md:hidden absolute right-6 label transition-colors duration-300 ${transparent ? "text-white/70" : "text-[#7A7A74]"}`}
             onClick={() => setOpen(!open)}
           >
             {open ? "Close" : "Menu"}

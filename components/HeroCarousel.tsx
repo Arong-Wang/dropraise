@@ -28,15 +28,15 @@ export default function HeroCarousel() {
   }, [next]);
 
   return (
-    <div className="mt-20 md:mt-0">
-      <section className="relative w-full h-[calc(100dvh-80px)] md:h-auto md:aspect-video overflow-hidden bg-[#111110]">
+    <div>
+      <section className="relative w-full h-[100dvh] md:h-auto md:aspect-video overflow-hidden bg-[#111110]">
 
         {/* Slides */}
         {slides.map((slide, i) => (
           <Link
             key={slide.src}
             href={slide.href}
-            className="absolute inset-0 transition-opacity duration-700"
+            className={`absolute inset-0 transition-opacity duration-700 ${i === current && !fading ? "pointer-events-auto" : "pointer-events-none"}`}
             style={{ opacity: i === current ? (fading ? 0 : 1) : 0 }}
             tabIndex={i === current ? 0 : -1}
           >
@@ -51,11 +51,11 @@ export default function HeroCarousel() {
           </Link>
         ))}
 
-        {/* Overlay — 桌面版顯示，手機版隱藏 */}
-        <div className="absolute inset-0 bg-black/35 pointer-events-none hidden md:block" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/35 pointer-events-none" />
 
-        {/* Bottom content — 桌面版顯示，手機版隱藏 */}
-        <div className="absolute inset-x-0 bottom-0 z-10 hidden md:flex flex-col items-center pb-14 gap-4 text-center px-6 pointer-events-none">
+        {/* Bottom content */}
+        <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center pb-10 md:pb-14 gap-4 text-center px-6 pointer-events-none">
           <h1 className="text-[16px] font-light tracking-[0.05em] text-white">
             讓未來的生活，在此具現。
           </h1>
@@ -91,34 +91,6 @@ export default function HeroCarousel() {
         </div>
       </section>
 
-      {/* 手機版文字區（輪播圖下方，桌面版隱藏） */}
-      <div className="md:hidden flex flex-col items-center gap-4 text-center px-6 py-8 bg-[#F8F7F5] border-b border-[#E2E2DC]">
-        <h1 className="text-[16px] font-light tracking-[0.05em] text-[#111110]">
-          讓未來的生活，在此具現。
-        </h1>
-        <p className="text-[16px] text-[#111110]/60 leading-relaxed max-w-md tracking-wide">
-          ── 室內設計不只是裝修，更是探索生活可能性的過程。
-        </p>
-        <div className="flex gap-2">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className="transition-all duration-300"
-              aria-label={`第 ${i + 1} 張`}
-            >
-              <span
-                className="block rounded-full transition-all duration-300"
-                style={{
-                  width: i === current ? "20px" : "6px",
-                  height: "6px",
-                  backgroundColor: i === current ? "#111110" : "rgba(0,0,0,0.25)",
-                }}
-              />
-            </button>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
