@@ -14,7 +14,7 @@ export async function GET() {
 export async function PUT(request: NextRequest) {
   try {
     const data = await request.json();
-    writeJson("data/works.json", data);
+    writeJson("works.json", data);
     return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json({ error: "寫入失敗（請確認在本機開發模式執行）" }, { status: 500 });

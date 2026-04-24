@@ -22,7 +22,7 @@ export async function PUT(
   const { slug } = await params;
   try {
     const data = await request.json();
-    writeJson(`data/projects/${slug}.json`, data);
+    writeJson(`projects/${slug}.json`, data);
     return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json({ error: "寫入失敗（請確認在本機開發模式執行）" }, { status: 500 });

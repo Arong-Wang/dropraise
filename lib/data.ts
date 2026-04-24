@@ -55,13 +55,13 @@ export interface Contact {
 
 function readJson<T>(relativePath: string): T {
   return JSON.parse(
-    fs.readFileSync(path.join(process.cwd(), relativePath), "utf-8")
+    fs.readFileSync(path.join(process.cwd(), "data", relativePath), "utf-8")
   ) as T;
 }
 
 export function writeJson(relativePath: string, data: unknown): void {
   fs.writeFileSync(
-    path.join(process.cwd(), relativePath),
+    path.join(process.cwd(), "data", relativePath),
     JSON.stringify(data, null, 2),
     "utf-8"
   );
@@ -71,13 +71,13 @@ export interface Layout {
   interiorCardGap: number;
 }
 
-export const getHeroSlides = () => readJson<HeroSlide[]>("data/hero-slides.json");
-export const getWorks = () => readJson<Work[]>("data/works.json");
-export const getProject = (slug: string) => readJson<Project>(`data/projects/${slug}.json`);
-export const getContact = () => readJson<Contact>("data/contact.json");
+export const getHeroSlides = () => readJson<HeroSlide[]>("hero-slides.json");
+export const getWorks = () => readJson<Work[]>("works.json");
+export const getProject = (slug: string) => readJson<Project>(`projects/${slug}.json`);
+export const getContact = () => readJson<Contact>("contact.json");
 export const getLayout = (): Layout => {
   try {
-    return readJson<Layout>("data/layout.json");
+    return readJson<Layout>("layout.json");
   } catch {
     return { interiorCardGap: 40 };
   }

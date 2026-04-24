@@ -14,7 +14,7 @@ export async function GET() {
 export async function PUT(request: NextRequest) {
   try {
     const data = await request.json();
-    writeJson("data/layout.json", data);
+    writeJson("layout.json", data);
     return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json(
