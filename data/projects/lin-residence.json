@@ -11,8 +11,14 @@
     "本案基地為狹長型的 12 坪空間，業主預計規劃兩房及一更衣室空間，在有限的坪數中將所有走道與置物空間放置一起規劃，並以一 60×140 的桌面串聯起廚房及客廳空間的整體軸線，是本案因應 12 坪兩房空間維持動線順暢、收納合理的解決辦法。"
   ],
   "designSlides": [
-    { "src": "/works/lin-residence/slides/1.png", "caption": "P.1 — 等角透視圖" },
-    { "src": "/works/lin-residence/slides/2.png", "caption": "P.2 — 等角透視圖" }
+    {
+      "src": "/works/lin-residence/slides/1.png",
+      "caption": "P.1 — 等角透視圖"
+    },
+    {
+      "src": "/works/lin-residence/slides/2.png",
+      "caption": "P.2 — 等角透視圖"
+    }
   ],
   "floorPlan": {
     "src": "/works/lin-residence/1.JPG",
@@ -30,7 +36,6 @@
     "/works/lin-residence/10.JPG",
     "/works/lin-residence/11.JPG",
     "/works/lin-residence/12.JPG",
-    "/works/lin-residence/13.JPG",
     "/works/lin-residence/14.JPG",
     "/works/lin-residence/16-17.gif",
     "/works/lin-residence/18-20.gif",
