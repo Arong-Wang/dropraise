@@ -1,6 +1,10 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname.startsWith("/admin")) return null;
   return (
     <footer className="border-t border-[#E2E2DC] mt-auto">
       <div className="px-6 md:px-10 xl:px-16 2xl:px-24 py-16">
@@ -30,7 +34,7 @@ export default function Footer() {
           <div>
             <p className="label text-[#111110] mb-5">關於</p>
             <div className="flex flex-col gap-3">
-              <Link href="/about" className="text-[13px] text-[#7A7A74] hover:text-[#111110] transition-colors">關於 Arong</Link>
+              <Link href="/about" className="text-[13px] text-[#7A7A74] hover:text-[#111110] transition-colors">關於我</Link>
               <Link href="/contact" className="text-[13px] text-[#7A7A74] hover:text-[#111110] transition-colors">聯絡我</Link>
             </div>
           </div>

@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "slug": "huang-residence",
+    "title": "黃宅室內裝修案",
+    "year": "2024",
+    "href": "/interior/huang-residence",
+    "cover": "/works/huang-residence/1.jpg",
+    "bg": "#EDECEA",
+    "location": "新北市新店區",
+    "type": "住宅設計",
+    "size": "43 ping",
+    "desc": "位於新店山區的黃宅擁有大面積開窗及無限的山景，本案透過低矮的硬裝及軟裝規劃使視線最大化擁抱無限的綠色視野，\n顏色與材質選擇低飽和度的自然材質，以不干涉自然為最大目的。"
+  },
+  {
+    "id": 2,
+    "slug": "lin-residence",
+    "title": "林宅室內裝修案",
+    "year": "2025",
+    "href": "/interior/lin-residence",
+    "cover": "/works/lin-residence/封面照.JPG",
+    "bg": "#EDECEA",
+    "location": "新北市三重區",
+    "type": "住宅設計",
+    "size": "12 ping",
+    "desc": "狹長型 12 坪空間的最大化利用。兩房加更衣室，走道與收納整合規劃，以 60×140 桌面串聯廚房與客廳軸線。"
+  },
+  {
+    "id": 6,
+    "slug": "koki-studio",
+    "title": "KOKI STUDIO",
+    "year": "2025",
+    "href": "/interior/koki-studio",
+    "cover": "/works/koki-studio/1.jpg",
+    "bg": "#EAE8E5",
+    "location": "台北市大安區",
+    "type": "商業空間",
+    "size": "27 ping",
+    "desc": "忠孝敦化狹長型空間的品牌體驗設計。採光留給接待區，弧線與大地色系牆面，打造高質感的放鬆護膚環境。"
+  },
+  {
+    "id": 7,
+    "slug": "liang-residence",
+    "title": "梁宅室內裝修案",
+    "year": "2025",
+    "href": "/interior/liang-residence",
+    "cover": "/works/liang-resedence/3.PNG",
+    "bg": "#EDECEA",
+    "location": "台北市內湖區",
+    "type": "住宅設計",
+    "size": "45 ping",
+    "desc": "維持原始格局優勢，設計聚焦於材質語彙、光影層次與收納系統。智慧家居整合於櫃體，L 型矮牆劃分工作區與休憩區。"
+  }
+]

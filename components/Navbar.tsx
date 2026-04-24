@@ -17,6 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const isAdmin = pathname.startsWith("/admin");
   const isHome = pathname === "/";
 
   useEffect(() => {
@@ -26,8 +27,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
 
-  // 首頁未捲動：透明；其他頁或捲動後：白底
   const transparent = isHome && !scrolled;
+
+  if (isAdmin) return null;
 
   return (
     <>
@@ -38,10 +40,10 @@ export default function Navbar() {
             : "bg-[#F8F7F5]/95 backdrop-blur-sm border-b border-[#E2E2DC]"
         }`}
       >
-        <div className="relative h-20 md:h-28 flex items-center px-6 md:px-10">
+        <div className="relative h-20 md:h-28 flex items-center px-6 md:px-10 xl:px-16 2xl:px-24">
 
           {/* Logo */}
-          <Link href="/" className="absolute left-6 md:left-10 flex items-center group">
+          <Link href="/" className="absolute left-6 md:left-10 xl:left-16 2xl:left-24 flex items-center group">
             <Image
               src="/logo.png"
               alt="Dropraise"

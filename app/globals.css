@@ -53,11 +53,69 @@ body {
   to   { transform: scale(1.08); }
 }
 
-.hero-zoom {
-  animation: zoom-in 10.6s ease-in-out forwards;
+@media (min-width: 768px) {
+  .hero-zoom {
+    animation: zoom-in 10.6s ease-in-out forwards;
+  }
 }
 
 ::selection {
   background: var(--brand-red);
   color: white;
+}
+
+.prose-blog {
+  color: #111110;
+  line-height: 1.8;
+}
+.prose-blog h2 {
+  font-size: clamp(1.3rem, 1.8vw, 1.8rem);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  color: #0000ff;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.prose-blog h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #0000ff;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-blog p {
+  font-size: 15px;
+  margin-bottom: 1.25rem;
+}
+.prose-blog strong {
+  font-weight: 500;
+}
+.prose-blog a {
+  color: #0000ff;
+  text-decoration: underline;
+}
+.prose-blog ul,
+.prose-blog ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.prose-blog li {
+  font-size: 15px;
+  margin-bottom: 0.5rem;
+}
+.prose-blog blockquote {
+  border-left: 2px solid #0000ff;
+  padding-left: 1.25rem;
+  color: #7a7a74;
+  font-style: italic;
+  margin: 2rem 0;
+}
+.prose-blog hr {
+  border: none;
+  border-top: 1px solid #e2e2dc;
+  margin: 2.5rem 0;
+}
+.prose-blog img {
+  width: 100%;
+  margin: 2rem 0;
 }

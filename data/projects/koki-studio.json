@@ -1,0 +1,41 @@
+{
+  "slug": "koki-studio",
+  "title": "KOKI STUDIO",
+  "subtitle": "商業空間 · 美容護理",
+  "cover": "/works/koki-studio/1.jpg",
+  "location": "台北市大安區",
+  "type": "商業空間",
+  "size": "27 ping",
+  "condition": "商業裝修",
+  "description": [
+    "KOKI STUDIO 是一家專注於粉刺淨痘護理的品牌，深耕台北市六年。本案位於忠孝敦化的狹長型空間，規劃把採光最好的位置留給接待區，以柔和的自然光及低重心照明，搭配弧線及大地色系的牆面，希望能提供顧客高質感的放鬆體驗。"
+  ],
+  "designSlides": [
+    { "src": "/works/koki-studio/slides/1.png", "caption": "P.1 — 等角透視圖" },
+    { "src": "/works/koki-studio/slides/2.png", "caption": "P.2 — 等角透視圖" }
+  ],
+  "floorPlan": {
+    "src": "/works/koki-studio/slides/3.png",
+    "caption": "P.3 — 平面圖"
+  },
+  "photos": [
+    "/works/koki-studio/1.jpg",
+    "/works/koki-studio/2.jpg",
+    "/works/koki-studio/3.jpg",
+    "/works/koki-studio/4.jpg",
+    "/works/koki-studio/5.jpg",
+    "/works/koki-studio/6.jpg",
+    "/works/koki-studio/7.jpg",
+    "/works/koki-studio/8.jpg",
+    "/works/koki-studio/9.jpg",
+    "/works/koki-studio/10.jpg",
+    "/works/koki-studio/11.JPG",
+    "/works/koki-studio/12.JPG",
+    "/works/koki-studio/13.jpg",
+    "/works/koki-studio/14.jpg",
+    "/works/koki-studio/15.jpg",
+    "/works/koki-studio/16.jpg",
+    "/works/koki-studio/17.jpg",
+    "/works/koki-studio/18.jpg"
+  ]
+}

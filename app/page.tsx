@@ -1,68 +1,28 @@
 import Link from "next/link";
 import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
-
-const works = [
-  {
-    id: 1,
-    title: "花園新城黃宅",
-    year: "2024",
-    href: "/interior/huang-residence",
-    cover: "/works/huang-residence/1.jpg",
-    bg: "#EDECEA",
-    location: "新北市新店區",
-    type: "住宅設計",
-    size: "43 ping",
-  },
-  {
-    id: 2,
-    title: "林宅室內裝修案",
-    year: "2025",
-    href: "/interior/lin-residence",
-    cover: "/works/lin-residence/封面照.JPG",
-    bg: "#EDECEA",
-    location: "新北市三重區",
-    type: "住宅設計",
-    size: "12 ping",
-  },
-  {
-    id: 6,
-    title: "KOKI STUDIO",
-    year: "2025",
-    href: "/interior/koki-studio",
-    cover: "/works/koki-studio/1.jpg",
-    bg: "#EAE8E5",
-    location: "台北市大安區",
-    type: "商業空間",
-    size: "27 ping",
-  },
-  {
-    id: 7,
-    title: "梁宅室內裝修案",
-    year: "2025",
-    href: "/interior/liang-residence",
-    cover: "/works/liang-resedence/3.PNG",
-    bg: "#EDECEA",
-    location: "台北市內湖區",
-    type: "住宅設計",
-    size: "45 ping",
-  },
-];
+import { getHeroSlides, getWorks } from "@/lib/data";
 
 export default function Home() {
+  const slides = getHeroSlides();
+  const works = getWorks();
+  const firstSlide = slides[0];
+
   return (
     <div>
 
       {/* ── Hero Carousel ── */}
-      <HeroCarousel />
+      <HeroCarousel slides={slides} />
 
       {/* Caption */}
-      <div className="px-6 md:px-10 mt-3 mb-2 flex justify-between items-center">
-        <p className="label text-[#0000ff]/60">花園新城黃宅 — 住宅設計</p>
-        <Link href="/interior/huang-residence" className="label text-[#0000ff]/60 hover:text-[#0000ff] transition-colors">
-          查看完整作品 →
-        </Link>
-      </div>
+      {firstSlide && (
+        <div className="px-6 md:px-10 xl:px-16 2xl:px-24 mt-3 mb-2 flex justify-between items-center">
+          <p className="label text-[#0000ff]/60">{firstSlide.label}</p>
+          <Link href={firstSlide.href} className="label text-[#0000ff]/60 hover:text-[#0000ff] transition-colors">
+            查看完整作品 →
+          </Link>
+        </div>
+      )}
 
       {/* ── Latest Work ── */}
       <section className="border-t-2 border-[#E2E2DC]">
@@ -74,11 +34,9 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Work grid */}
           <div className="grid md:grid-cols-2 gap-6">
             {works.map((w) => (
               <Link key={w.id} href={w.href} className="group block">
-                {/* Image */}
                 <div
                   className="aspect-[16/10] mb-4 overflow-hidden relative"
                   style={{ backgroundColor: w.bg }}
@@ -97,7 +55,6 @@ export default function Home() {
                   )}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/[0.04] transition-colors duration-300" />
                 </div>
-                {/* Meta */}
                 <div className="mt-6 flex items-center justify-between border-t border-[#0000ff]/10 pt-6">
                   <div className="pl-4">
                     <p className="label text-[#0000ff]/40 mb-1">Name</p>
@@ -133,10 +90,9 @@ export default function Home() {
       {/* ── Two Brands ── */}
       <section className="border-t border-[#E2E2DC]">
         <div className="grid md:grid-cols-2">
-          {/* About */}
           <Link
             href="/about"
-            className="group px-6 md:px-10 py-20 border-b md:border-b-0 md:border-r border-[#E2E2DC] flex flex-col justify-between min-h-[360px] hover:bg-[#0000ff] transition-colors duration-500"
+            className="group px-6 md:px-10 xl:px-16 2xl:px-24 py-20 border-b md:border-b-0 md:border-r border-[#E2E2DC] flex flex-col justify-between min-h-[360px] hover:bg-[#0000ff] transition-colors duration-500"
           >
             <div className="w-1 h-1 rounded-full bg-[#C8372D]" />
             <div>
@@ -153,10 +109,9 @@ export default function Home() {
             </span>
           </Link>
 
-          {/* MBR */}
           <Link
             href="/mbr"
-            className="group px-6 md:px-10 py-20 flex flex-col justify-between min-h-[360px] hover:bg-[#0000ff] transition-colors duration-500"
+            className="group px-6 md:px-10 xl:px-16 2xl:px-24 py-20 flex flex-col justify-between min-h-[360px] hover:bg-[#0000ff] transition-colors duration-500"
           >
             <div className="w-1 h-1 rounded-full bg-[#0000ff]" />
             <div>
@@ -172,25 +127,6 @@ export default function Home() {
               探索 →
             </span>
           </Link>
-        </div>
-      </section>
-
-      {/* ── Philosophy strip ── */}
-      <section className="border-t border-[#E2E2DC]">
-        <div className="px-6 md:px-10 xl:px-16 2xl:px-24 py-20">
-          <div className="grid md:grid-cols-3 gap-10 md:gap-16">
-            {[
-              { accent: "#C8372D", title: "問題導向設計", body: "每個設計決策都從「解決什麼問題」出發，而不是從「看起來好不好看」出發。" },
-              { accent: "#0000ff", title: "材質誠實", body: "碳化木皮、金屬、清水感。讓材質本身說話，不過度裝飾。" },
-              { accent: "#0000ff", title: "長期思維", body: "設計不是一次性消費，而是陪你生活十年以上的決定。" },
-            ].map((item) => (
-              <div key={item.title}>
-                <div className="w-6 h-px mb-8" style={{ backgroundColor: item.accent }} />
-                <h3 className="text-[15px] font-medium mb-3 text-[#0000ff]">{item.title}</h3>
-                <p className="text-[13px] text-[#0000ff]/60 leading-relaxed">{item.body}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
