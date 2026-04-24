@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   outputFileTracingExcludes: {
-    "*": [
+    "api/admin/**": [
       "./public/**/*",
       "./.git/**/*",
       "./node_modules/.cache/**/*",
