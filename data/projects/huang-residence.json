@@ -1,6 +1,6 @@
 {
   "slug": "huang-residence",
-  "title": "花園新城黃宅",
+  "title": "黃宅室內裝修案",
   "subtitle": "住宅 · 新成屋",
   "cover": "/works/huang-residence/1.jpg",
   "location": "新北市新店區",
@@ -11,12 +11,18 @@
     "位於新店山區的黃宅擁有大面積開窗及無限的山景，本案透過低矮的硬裝及軟裝規劃使視線最大化擁抱無限的綠色視野，顏色與材質選擇低飽和度的自然材質，以不干涉自然為最大目的。"
   ],
   "designSlides": [
-    { "src": "/works/huang-residence/slides/1.png", "caption": "P.1 — 等角透視圖" },
-    { "src": "/works/huang-residence/slides/2.png", "caption": "P.2 — 等角透視圖" }
+    {
+      "src": "/works/huang-residence/1.png",
+      "caption": "P.1 — 等角透視圖"
+    },
+    {
+      "src": "/works/huang-residence/2.png",
+      "caption": "P.2 — 等角透視圖"
+    }
   ],
   "floorPlan": {
     "src": "/works/huang-residence/slides/3v2.png",
-    "caption": "P.3 — 平面圖"
+    "caption": "P.3 — 平面配置圖"
   },
   "photos": [
     "/works/huang-residence/1.jpg",

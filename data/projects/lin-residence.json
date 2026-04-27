@@ -12,12 +12,12 @@
   ],
   "designSlides": [
     {
-      "src": "/works/lin-residence/slides/1.png",
+      "src": "/works/lin-residence/1.png",
       "caption": "P.1 — 等角透視圖"
     },
     {
       "src": "/works/lin-residence/slides/2.png",
-      "caption": "P.2 — 等角透視圖"
+      "caption": "P.2 — 平面配置圖"
     }
   ],
   "floorPlan": {
