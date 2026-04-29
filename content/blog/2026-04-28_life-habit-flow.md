@@ -1,11 +1,10 @@
 ---
-title: "設計師真心話：生活習慣，決定「動線」的生死"
-date: "2026-04-28"
-category: "設計觀點"
-coverImage: "/blog/life-habit-flow/cover.png"
-excerpt: "很多人在裝潢前，第一個問的是：「我要做什麼風格？」但真正會影響你每天生活順不順的，是一件更底層的事——動線。"
+title: 設計師真心話：生活習慣，決定「動線」的好壞
+date: '2026-04-28'
+category: 設計觀點
+coverImage: /blog/life-habit-flow/cover.png
+excerpt: 很多人在裝潢前，第一個問的是：「我要做什麼風格？」但真正會影響你每天生活順不順的，是一件更底層的事——動線。
 ---
-
 很多人在裝潢前，第一個問的是：
 
 「我要做什麼風格？」
