@@ -14,14 +14,14 @@ export async function POST() {
   try {
     const cwd = process.cwd();
 
-    // 1. 偵測並提交 data/ public/ 的變更
-    const status = execSync("git status --porcelain data/ public/", { cwd })
+    // 1. 偵測並提交 data/ public/ content/ 的變更
+    const status = execSync("git status --porcelain data/ public/ content/", { cwd })
       .toString()
       .trim();
 
     let committed = false;
     if (status) {
-      execSync("git add data/ public/", { cwd });
+      execSync("git add data/ public/ content/", { cwd });
       const ts = new Date().toLocaleString("zh-TW", { timeZone: "Asia/Taipei" });
       execSync(`git commit -m "Update content ${ts}"`, { cwd });
       committed = true;
