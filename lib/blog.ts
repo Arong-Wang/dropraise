@@ -56,6 +56,32 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     category: data.category ?? "",
     coverImage: data.coverImage ?? "",
     excerpt: data.excerpt ?? "",
-    content: String(await marked.parse(content)),
+    content: await renderContent(content),
   };
+}
+
+async function renderContent(raw: string): Promise<string> {
+  const pat = /<!-- BLOCK:split\|([^>]+) -->([\s\S]*?)<!-- \/BLOCK:split -->/g;
+  const parts: string[] = [];
+  let last = 0;
+  let m: RegExpExecArray | null;
+
+  while ((m = pat.exec(raw)) !== null) {
+    if (m.index > last) {
+      parts.push(String(await marked.parse(raw.slice(last, m.index))));
+    }
+    const imgPath = m[1].replace(/["<>]/g, "");
+    const renderedText = String(await marked.parse(m[2].trim()));
+    parts.push(
+      `<div class="blog-split"><div class="blog-split-text">${renderedText}</div>` +
+      `<div class="blog-split-image"><img src="${imgPath}" alt="" /></div></div>`
+    );
+    last = pat.lastIndex;
+  }
+
+  if (last < raw.length) {
+    parts.push(String(await marked.parse(raw.slice(last))));
+  }
+
+  return parts.join("");
 }

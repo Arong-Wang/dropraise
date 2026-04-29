@@ -120,6 +120,32 @@ body {
   margin: 2rem 0;
 }
 
+.blog-split {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin: 2.5rem 0;
+}
+.blog-split-text {
+  flex: 1;
+}
+.blog-split-image {
+  width: 42%;
+  flex-shrink: 0;
+}
+.blog-split-image img {
+  width: 100%;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .blog-split {
+    flex-direction: column;
+  }
+  .blog-split-image {
+    width: 100%;
+  }
+}
+
 .blog-px {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
