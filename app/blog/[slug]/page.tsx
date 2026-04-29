@@ -24,7 +24,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
       <div className="h-28" />
 
       <article className="border-t border-[#E2E2DC]">
-        <div className="px-6 md:px-10 xl:px-16 2xl:px-24 py-16">
+        <div className="blog-px py-16">
           <Link
             href="/blog"
             className="label text-[#0000ff]/40 hover:text-[#0000ff] transition-colors mb-12 inline-block"
@@ -32,7 +32,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
             ← Blog
           </Link>
 
-          <header className="mb-12 max-w-3xl">
+          <header className="mb-12 max-w-[900px]">
             <p className="label text-[#0000ff]/40 mb-4">{post.category}</p>
             <h1 className="display text-[#0000ff] mb-6">{post.title}</h1>
             <p className="label text-[#0000ff]/30">{post.date}</p>
@@ -40,7 +40,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
         </div>
 
         {post.coverImage && (
-          <div className="px-6 md:px-10 xl:px-16 2xl:px-24 mb-16">
+          <div className="blog-px mb-16">
             <div className="relative aspect-[16/9] overflow-hidden">
               <Image
                 src={post.coverImage}
@@ -52,15 +52,15 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
           </div>
         )}
 
-        <div className="px-6 md:px-10 xl:px-16 2xl:px-24 pb-24">
+        <div className="blog-px pb-24">
           <div
-            className="prose-blog max-w-2xl"
+            className="prose-blog max-w-[900px]"
             dangerouslySetInnerHTML={{ __html: post.content ?? "" }}
           />
         </div>
       </article>
 
-      <div className="border-t border-[#E2E2DC] px-6 md:px-10 xl:px-16 2xl:px-24 py-10">
+      <div className="border-t border-[#E2E2DC] blog-px py-10">
         <Link
           href="/blog"
           className="label text-[#0000ff]/40 hover:text-[#0000ff] transition-colors"
