@@ -37,8 +37,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             {works.map((w) => (
               <Link key={w.id} href={w.href} className="group block">
+                {/* 圖片容器：overflow-hidden 裁切底部滑出的文字卡 */}
                 <div
-                  className="aspect-[16/10] mb-4 overflow-hidden relative"
+                  className="aspect-[16/10] overflow-hidden relative"
                   style={{ backgroundColor: w.bg }}
                 >
                   {w.cover ? (
@@ -53,34 +54,19 @@ export default function Home() {
                       <span className="label text-[#0000ff]/60">作品圖片</span>
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/[0.04] transition-colors duration-300" />
-                </div>
-                <div className="mt-6 flex items-center justify-between border-t border-[#0000ff]/10 pt-6">
-                  <div className="pl-4">
-                    <p className="label text-[#0000ff]/40 mb-1">Name</p>
-                    <p className="text-[18px] font-medium leading-snug text-[#0000ff]">{w.title}</p>
-                  </div>
-                  <div className="flex gap-6">
-                    {w.location && (
-                      <div>
-                        <p className="label text-[#0000ff]/40 mb-1">Location</p>
-                        <p className="text-[12px] text-[#0000ff]/60">{w.location}</p>
-                      </div>
-                    )}
-                    {w.type && (
-                      <div>
-                        <p className="label text-[#0000ff]/40 mb-1">Type</p>
-                        <p className="text-[12px] text-[#0000ff]/60">{w.type}</p>
-                      </div>
-                    )}
-                    {w.size && (
-                      <div>
-                        <p className="label text-[#0000ff]/40 mb-1">Size</p>
-                        <p className="text-[12px] text-[#0000ff]/60">{w.size}</p>
-                      </div>
-                    )}
+
+                  {/* Hover 文字卡：從底部滑出 */}
+                  <div className="absolute inset-x-0 bottom-0 bg-[#0000ff] px-6 py-5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <p className="label text-white/50 mb-2">Project</p>
+                    <p className="text-[17px] font-medium text-white leading-snug mb-3">{w.title}</p>
+                    <div className="flex gap-5">
+                      {w.location && <p className="label text-white/60">{w.location}</p>}
+                      {w.type && <p className="label text-white/60">{w.type}</p>}
+                      {w.size && <p className="label text-white/60">{w.size}</p>}
+                    </div>
                   </div>
                 </div>
+
               </Link>
             ))}
           </div>
@@ -100,9 +86,6 @@ export default function Home() {
               <h3 className="heading-lg text-[#0000ff] group-hover:text-white transition-colors duration-500 mb-4">
                 About<br />Dropraise
               </h3>
-              <p className="text-[13px] text-[#0000ff]/60 group-hover:text-white/60 leading-relaxed max-w-xs transition-colors duration-500">
-                從生活困擾出發的設計顧問——了解我們的設計理念與品牌故事。
-              </p>
             </div>
             <span className="label text-[#0000ff]/60 group-hover:text-white transition-colors duration-300">
               了解更多 →
@@ -119,9 +102,6 @@ export default function Home() {
               <h3 className="heading-lg text-[#0000ff] group-hover:text-white transition-colors duration-500 mb-4">
                 Made by<br />Romance
               </h3>
-              <p className="text-[13px] text-[#0000ff]/60 group-hover:text-white/60 leading-relaxed max-w-xs transition-colors duration-500">
-                製造浪漫——用設計語言解決你說不出口的生活問題。
-              </p>
             </div>
             <span className="label text-[#0000ff]/60 group-hover:text-white transition-colors duration-300">
               探索 →
