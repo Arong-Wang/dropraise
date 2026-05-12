@@ -12,7 +12,7 @@ export default function HuangResidencePage() {
   return (
     <div className="pt-20">
 
-      <section className="px-6 md:px-10 xl:px-16 2xl:px-24 pt-20 pb-16">
+      <section className="blog-px pt-20 pb-16">
         <Link href="/interior" className={`label ${blueMuted} ${blueHover} transition-colors mb-8 inline-block`}>
           ← Interior
         </Link>
@@ -21,18 +21,16 @@ export default function HuangResidencePage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10">
-        <div className="relative w-full aspect-[16/9] overflow-hidden">
-          <Image src={p.cover} alt={`${p.title} 封面`} fill className="object-cover" priority />
-        </div>
+      <section>
+        <Image src={p.cover} alt={`${p.title} 封面`} width={0} height={0} sizes="100vw" className="w-full h-auto" priority />
       </section>
 
       <section className="border-b border-[#0000ff]/20">
-        <div className="px-6 md:px-10 xl:px-16 2xl:px-24 py-10">
+        <div className="blog-px py-10">
           <div className="grid grid-cols-4 gap-8">
             <div>
               <p className={`label ${blueMuted} mb-2`}>Project</p>
-              <p className={`heading-lg ${blue}`}>{p.title}</p>
+              <p className={`text-[14px] md:text-[clamp(1.5rem,2.2vw,2.2rem)] md:font-light ${blue}`}>{p.title}</p>
             </div>
             <div>
               <p className={`label ${blueMuted} mb-2`}>Location</p>
@@ -50,7 +48,7 @@ export default function HuangResidencePage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 xl:px-16 2xl:px-24 pt-10 pb-4">
+      <section className="blog-px pt-10 pb-4">
         <div className="flex items-center gap-4 mb-6">
           <div className="w-6 h-px bg-[#0000ff]/60" />
           <p className={`label ${blueMuted}`}>設計提案</p>
@@ -67,10 +65,10 @@ export default function HuangResidencePage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 xl:px-16 2xl:px-24 pb-10">
+      <section className="blog-px pb-10">
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 items-end">
-          <div className="relative overflow-hidden bg-[#f8f6f5]">
-            <Image src={p.floorPlan.src} alt="平面圖" width={2400} height={1697} className="w-full h-auto" />
+          <div className="overflow-hidden bg-[#f8f6f5]">
+            <Image src={p.floorPlan.src} alt="平面配置圖" width={1920} height={1080} className="w-full h-auto" />
             {p.floorPlan.caption && (
               <div className="px-4 py-2 border-t border-[#0000ff]/20">
                 <p className={`text-[14px] ${blueMuted}`}>{p.floorPlan.caption}</p>
@@ -95,22 +93,29 @@ export default function HuangResidencePage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 xl:px-16 2xl:px-24 pb-20">
+      <section className="blog-px pb-20">
         <div className="flex items-center gap-4 mb-6">
           <div className="w-6 h-px bg-[#0000ff]/60" />
           <p className={`label ${blueMuted}`}>完工實景</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {p.photos.map((photo, i) => (
-            <div key={photo} className="relative aspect-[4/3] overflow-hidden">
-              <Image src={photo} alt={`${p.title} 完工照 ${i + 1}`} fill className="object-cover hover:scale-[1.02] transition-transform duration-500" />
+            <div key={photo} className="overflow-hidden">
+              <Image
+                src={photo}
+                alt={`${p.title} 完工照 ${i + 1}`}
+                width={0}
+                height={0}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto max-h-screen object-contain object-center hover:scale-[1.02] transition-transform duration-500"
+              />
             </div>
           ))}
         </div>
       </section>
 
       <section className="border-t border-[#0000ff]/20">
-        <div className="px-6 md:px-10 xl:px-16 2xl:px-24 py-12">
+        <div className="blog-px py-12">
           <div className="flex justify-between items-center">
             <Link href="/interior" className={`text-[1.375rem] tracking-[0.06em] uppercase ${blueMuted} ${blueHover} transition-colors`}>
               ← 所有作品

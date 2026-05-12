@@ -1,0 +1,46 @@
+{
+  "slug": "shao-residence",
+  "title": "邵宅室內裝修案",
+  "subtitle": "住宅 · 老屋翻新",
+  "cover": "/works/shao-residence/2.png",
+  "location": "新北市板橋區",
+  "type": "住宅設計",
+  "size": "23.5 ping",
+  "condition": "老屋翻新",
+  "description": [
+    "本案基地為屋齡約 50 年的傳統老公寓，原始格局保有面南採光良好的前陽台條件，也同時存在老屋常見的漏水、地坪傾斜與管線老化等問題。因此，本案的設計起點並非單純追求風格更新，而是先回到居住安全與長期使用的基礎。工程上優先全面更新水電系統，並採用破壞性較低的上配給水方式，減少對老屋既有結構的干擾，讓空間在翻新後能具備更穩定、安心的生活基礎。",
+    "在材質設定上，屋主希望保留原有的實木地板，因此整體設計圍繞著柚木實木的溫潤質地展開。透過水泥素地的灰、板岩磚的灰，以及櫃體黑與白的對比，來中和柚木較高飽和度的色澤，使空間在保有老屋記憶與木質溫度的同時，也呈現出更沉穩、乾淨且具有現代感的生活氛圍。"
+  ],
+  "designSlides": [
+    {
+      "src": "/works/shao-residence/slides/1v2.png",
+      "caption": "P.1 — 設計提案"
+    },
+    {
+      "src": "/works/shao-residence/slides/2v2.png",
+      "caption": "P.2 — 設計提案"
+    },
+    {
+      "src": "/works/shao-residence/slides/3v2.png",
+      "caption": "P.3 — 設計提案"
+    }
+  ],
+  "floorPlan": {
+    "src": "/works/shao-residence/slides/3v2.png",
+    "caption": "平面配置圖"
+  },
+  "photos": [
+    "/works/shao-residence/1.png",
+    "/works/shao-residence/2.png",
+    "/works/shao-residence/3.jpg",
+    "/works/shao-residence/4.png",
+    "/works/shao-residence/5.png",
+    "/works/shao-residence/6.png",
+    "/works/shao-residence/7.JPG",
+    "/works/shao-residence/8.png",
+    "/works/shao-residence/9.JPG",
+    "/works/shao-residence/10.JPG",
+    "/works/shao-residence/11.jpg",
+    "/works/shao-residence/12.jpg"
+  ]
+}

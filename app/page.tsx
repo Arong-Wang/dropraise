@@ -94,7 +94,7 @@ export default function Home() {
 
           <Link
             href="/mbr"
-            className="group px-6 md:px-10 xl:px-16 2xl:px-24 py-20 flex flex-col justify-between min-h-[360px] hover:bg-[#0000ff] transition-colors duration-500"
+            className="group px-6 md:px-10 xl:px-16 2xl:px-24 py-20 flex flex-col justify-between min-h-[360px] hover:bg-[#cc0000] transition-colors duration-500"
           >
             <div className="w-1 h-1 rounded-full bg-[#0000ff]" />
             <div>
