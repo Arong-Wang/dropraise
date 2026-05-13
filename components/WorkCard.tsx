@@ -7,6 +7,8 @@ import type { Work } from "@/lib/data";
 export default function WorkCard({ w }: { w: Work }) {
   const ref = useRef<HTMLDivElement>(null);
   const [revealed, setRevealed] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -17,6 +19,19 @@ export default function WorkCard({ w }: { w: Work }) {
     );
     observer.observe(el);
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolling(true);
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => setScrolling(false), 200);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
   }, []);
 
   return (
@@ -31,7 +46,7 @@ export default function WorkCard({ w }: { w: Work }) {
               src={w.cover}
               alt={w.title}
               fill
-              className="object-cover md:grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-500"
+              className={`object-cover group-hover:scale-[1.03] transition-all duration-500 ${scrolling ? "grayscale" : ""}`}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">

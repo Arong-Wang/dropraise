@@ -10,7 +10,7 @@ export default function InteriorPage() {
     <div>
       <div className="h-28" />
 
-      <section className="px-6 md:px-10 xl:px-16 2xl:px-24 py-16 border-t border-[#E2E2DC]">
+      <section className="blog-px py-16 border-t border-[#E2E2DC]">
         <div className="flex flex-col gap-0">
           {projects.map((p, i) => (
             <Link
@@ -37,7 +37,7 @@ export default function InteriorPage() {
               </div>
 
               <div className="flex flex-col gap-6 flex-1">
-                <h2 className="text-[22px] font-light leading-snug tracking-tight text-[#0000ff]/60 group-hover:text-[#0000ff] transition-colors duration-300">
+                <h2 className="text-[22px] font-normal leading-snug tracking-tight text-[#0000ff]/60 group-hover:text-[#0000ff] transition-colors duration-300">
                   {p.title}
                 </h2>
                 <div className="flex gap-8">
@@ -69,7 +69,7 @@ export default function InteriorPage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 xl:px-16 2xl:px-24 py-24 border-t border-[#E2E2DC]">
+      <section className="blog-px py-24 border-t border-[#E2E2DC]">
         <p className="text-[20px] text-[#0000ff] mb-10 max-w-md leading-relaxed">
           有想改造的空間嗎？歡迎預約免費諮詢，我們先聊聊你的需求。
         </p>
