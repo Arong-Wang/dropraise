@@ -46,7 +46,7 @@ export default function WorkCard({ w }: { w: Work }) {
               src={w.cover}
               alt={w.title}
               fill
-              className={`object-cover group-hover:scale-[1.03] transition-all duration-500 ${scrolling ? "grayscale" : ""}`}
+              className={`object-cover group-hover:scale-[1.03] transition-all duration-500 ${scrolling ? "" : "grayscale"}`}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
