@@ -35,28 +35,42 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             style={{ opacity: i === current ? (fading ? 0 : 1) : 0 }}
             tabIndex={i === current ? 0 : -1}
           >
-            <Image
-              key={i === current ? `active-${current}` : slide.src}
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              className={`object-cover ${i === current ? "hero-zoom" : ""}`}
-              priority={i === 0}
-            />
+            {/* 桌機圖 16:9 */}
+            <div className="absolute inset-0 hidden md:block">
+              <Image
+                key={i === current ? `active-desktop-${current}` : `desktop-${slide.src}`}
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                className={`object-cover ${i === current ? "hero-zoom" : ""}`}
+                priority={i === 0}
+              />
+            </div>
+            {/* 手機圖 9:16 */}
+            <div className="absolute inset-0 block md:hidden">
+              <Image
+                key={i === current ? `active-mobile-${current}` : `mobile-${slide.srcMobile ?? slide.src}`}
+                src={slide.srcMobile ?? slide.src}
+                alt={slide.alt}
+                fill
+                className={`object-cover object-center ${i === current ? "hero-zoom" : ""}`}
+                priority={i === 0}
+              />
+            </div>
           </Link>
         ))}
 
         <div className="absolute inset-0 bg-black/35 pointer-events-none" />
 
         <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center pb-10 md:pb-14 gap-4 text-center px-6 pointer-events-none">
-          <h1 className="text-[16px] font-light tracking-[0.05em] text-white">
+          <h1 className="text-[17px] font-light tracking-[0.12em] text-white">
             讓未來的生活，在此具現。
           </h1>
-          <p className="text-[16px] text-white/70 leading-relaxed max-w-md tracking-wide">
+          <p className="hidden md:block text-[16px] text-white/70 leading-relaxed max-w-md tracking-wide">
             ── 室內設計不只是裝修，更是探索生活可能性的過程。
           </p>
 
-          <div className="flex gap-2 mt-2 pointer-events-auto">
+          <div className="hidden md:flex gap-2 mt-2 pointer-events-auto">
             {slides.map((_, i) => (
               <button
                 key={i}

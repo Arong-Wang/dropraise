@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Serif_TC } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const notoSerifTC = Noto_Serif_TC({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-noto-serif-tc" });
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -31,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-TW" className={`${inter.variable} h-full`}>
+    <html lang="zh-TW" className={`${inter.variable} ${notoSerifTC.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-[#FAFAF8] text-[#1A1A1A]">
         <Navbar />
         <main className="flex-1">{children}</main>

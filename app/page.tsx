@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
+import WorkCard from "@/components/WorkCard";
 import { getHeroSlides, getWorks } from "@/lib/data";
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
 
       {/* ── Latest Work ── */}
       <section className="border-t-2 border-[#E2E2DC]">
-        <div className="px-6 md:px-10 xl:px-16 2xl:px-24 py-40">
+        <div className="px-6 md:px-10 xl:px-16 2xl:px-24 py-16 md:py-40">
           <div className="flex items-end justify-between mb-12">
             <h2 className="heading-lg text-[#0000ff]">近期作品</h2>
             <Link href="/interior" className="label text-[#0000ff]/60 hover:text-[#0000ff] transition-colors">
@@ -36,38 +36,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {works.map((w) => (
-              <Link key={w.id} href={w.href} className="group block">
-                {/* 圖片容器：overflow-hidden 裁切底部滑出的文字卡 */}
-                <div
-                  className="aspect-[16/10] overflow-hidden relative"
-                  style={{ backgroundColor: w.bg }}
-                >
-                  {w.cover ? (
-                    <Image
-                      src={w.cover}
-                      alt={w.title}
-                      fill
-                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="label text-[#0000ff]/60">作品圖片</span>
-                    </div>
-                  )}
-
-                  {/* Hover 文字卡：從底部滑出 */}
-                  <div className="absolute inset-x-0 bottom-0 bg-[#0000ff] px-6 py-5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                    <p className="label text-white/50 mb-2">Project</p>
-                    <p className="text-[17px] font-medium text-white leading-snug mb-3">{w.title}</p>
-                    <div className="flex gap-5">
-                      {w.location && <p className="label text-white/60">{w.location}</p>}
-                      {w.type && <p className="label text-white/60">{w.type}</p>}
-                      {w.size && <p className="label text-white/60">{w.size}</p>}
-                    </div>
-                  </div>
-                </div>
-
-              </Link>
+              <WorkCard key={w.id} w={w} />
             ))}
           </div>
         </div>

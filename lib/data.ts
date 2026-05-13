@@ -3,6 +3,7 @@ import path from "path";
 
 export interface HeroSlide {
   src: string;
+  srcMobile?: string;
   alt: string;
   href: string;
   label: string;
@@ -36,6 +37,8 @@ export interface Project {
   type: string;
   size: string;
   condition: string;
+  year?: string;
+  sidebarImages?: string[];
   description: string[];
   designSlides: DesignSlide[];
   floorPlan: { src: string; caption: string };

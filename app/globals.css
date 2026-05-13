@@ -22,6 +22,8 @@ html {
 body {
   background-color: var(--bg);
   color: var(--text);
+  font-family: var(--font-noto-serif-tc), serif;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "kern" 1, "liga" 1;
 }
@@ -29,16 +31,16 @@ body {
 /* normcph-style typography scale */
 .display {
   font-size: clamp(2rem, 3.2vw, 3.2rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
 }
 
 .heading-lg {
   font-size: clamp(1.5rem, 2.2vw, 2.2rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.02em;
 }
 
 .label {
@@ -59,6 +61,18 @@ body {
   }
 }
 
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 ::selection {
   background: var(--brand-red);
   color: white;
@@ -70,15 +84,16 @@ body {
 }
 .prose-blog h2 {
   font-size: clamp(1.3rem, 1.8vw, 1.8rem);
-  font-weight: 300;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: #0000ff;
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
 .prose-blog h3 {
   font-size: 1.1rem;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: #0000ff;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
@@ -130,12 +145,15 @@ body {
   flex: 1;
 }
 .blog-split-image {
-  width: 42%;
+  width: 65%;
   flex-shrink: 0;
 }
 .blog-split-image img {
   width: 100%;
   margin: 0;
+}
+.blog-split-text > *:first-child {
+  margin-top: 0;
 }
 @media (max-width: 767px) {
   .blog-split {
@@ -169,5 +187,25 @@ body {
   .blog-px {
     padding-left: 10rem;
     padding-right: 10rem;
+  }
+}
+
+.blog-article {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 768px) {
+  .blog-article {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .blog-article {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

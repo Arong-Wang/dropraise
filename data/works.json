@@ -44,11 +44,24 @@
     "title": "梁宅室內裝修案",
     "year": "2025",
     "href": "/interior/liang-residence",
-    "cover": "/works/liang-resedence/3.png",
+    "cover": "/works/liang-residence/3.png",
     "bg": "#EDECEA",
     "location": "台北市內湖區",
     "type": "住宅設計",
     "size": "45 ping",
     "desc": "維持原始格局優勢，設計聚焦於材質語彙、光影層次與收納系統。智慧家居整合於櫃體，L 型矮牆劃分工作區與休憩區。"
+  },
+  {
+    "id": 8,
+    "slug": "shao-residence",
+    "title": "邵宅室內裝修案",
+    "year": "2025",
+    "href": "/interior/shao-residence",
+    "cover": "/works/shao-residence/2.png",
+    "bg": "#EDECEA",
+    "location": "新北市板橋區",
+    "type": "住宅設計",
+    "size": "23.5 ping",
+    "desc": "50 年老公寓的全面翻新。以工程安全為設計起點，保留柚木實木地板，透過水泥素地與板岩磚的灰調，打造沉穩現代的生活氛圍。"
   }
 ]
