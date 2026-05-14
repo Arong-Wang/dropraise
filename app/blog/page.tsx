@@ -32,7 +32,7 @@ export default function BlogPage() {
               {/* Text */}
               <div className="flex flex-col gap-5 flex-1">
                 <p className="label text-[#0000ff]/40 group-hover:text-white/60 transition-colors duration-500">{post.category}</p>
-                <h2 className="text-[22px] font-light leading-snug tracking-tight text-[#0000ff]/60 group-hover:text-white transition-colors duration-500">
+                <h2 className="text-[22px] font-medium leading-snug tracking-tight text-[#0000ff]/60 group-hover:text-white transition-colors duration-500">
                   {post.title}
                 </h2>
                 <p className="text-[15px] text-[#7A7A74] leading-relaxed group-hover:text-white/70 transition-colors duration-500">
